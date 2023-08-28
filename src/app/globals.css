@@ -31,9 +31,7 @@ body {
   */
 }
 
-h1 {
-  font-size: 40px;
-}
+
 
 h2 {
   font-size: 30px;
@@ -43,17 +41,21 @@ p {
   font-size: 14px;
 }
 
-.contato {
-  background-color: rgb(113, 113, 238);
-  display: flex;
-  flex-direction: row;
 
+
+
+
+.sobre {
+  /* width: 500px; */
+  /* height: 200px; */
+  background: rgb(255, 5, 172);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
-
-
 .objetivo-profissional {
-  width: 500px;
+  /* width: 500px; */
   /* height: 200px; */
   background: rgb(199, 17, 199);
   margin-top: 20px;
@@ -82,3 +84,17 @@ p {
   padding: 20px;
 }
 
+
+.cropped1 {
+  width: 40%; /* width of container */
+  /* height: 200px; /* height of container */ 
+  object-fit: cover;
+  /* border: 5px solid black; */
+}
+.cropped2 {
+    width: 200px; /* width of container */
+    height: 200px; /* height of container */
+    object-fit: cover;
+    object-position: 20px 10px; /* try 20% 10% */ 
+    border: 5px solid black;
+}
