@@ -41,36 +41,34 @@ export default function Home() {
       </div>
 
       <div className="flex flex-row">
-        <Image src={ Profile } alt="profile-picture" className="cropped1 w-8/12 "/>
+        <Image src={ Profile } alt="profile-picture" className="cropped1"/>
 
-        <div className="flex flex-col rounded-lg bg-black w-4/12">
+        <div className="flex flex-row rounded-lg bg-black ">
 
-<div className="sobre rounded-lg mx-12">
-  <h2>
-    Sobre
-  </h2>
-  <p className="text-left text-base break-normal">
-    Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante
-    como é possível usar essa ferramenta em tantos contextos diferentes para a resolução dos mais diversos problemas.
-    Tenho focado no aprimoramento de minhas hard-skills com React, Redux, Hooks, Jest, Node.js, MySQL, arquitetura MSC e TypeScript,
-    e nas soft-skills que tangem a comunicação e liderança.
-    Vamos nos conectar e ficarei feliz com a oportunidade de por em prática aquilo que venho estudando.  
-  </p>
-</div>
+          <div className="sobre rounded-lg mx-12">
+            <h2>Sobre</h2>
+            <p className="text-left text-base break-normal">
+              Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante
+              como é possível usar essa ferramenta em tantos contextos diferentes para a resolução dos mais diversos problemas.
+              Tenho focado no aprimoramento de minhas hard-skills com React, Redux, Hooks, Jest, Node.js, MySQL, arquitetura MSC e TypeScript,
+              e nas soft-skills que tangem a comunicação e liderança.
+              Vamos nos conectar e ficarei feliz com a oportunidade de por em prática aquilo que venho estudando.  
+            </p>
+          </div>
 
-<div className="objetivo-profissional rounded-lg mx-12">
-  <h2>
-    Objetivo Profissional
-  </h2>
-  <p className="text-left text-base break-normal">
-    Buscar uma oportunidade como desenvolvedor web,
-    onde eu possa empregar minhas habilidades em programação e contribuir
-    de forma criativa para encontrar soluções eficientes para projetos web.
-    Almejo me aprimorar com ajuda da equipe e evoluir minhas habilidades,
-    sempre buscando novas maneiras de contribuir com a equipe.
-  </p>
-</div>
-</div>
+          <div className="objetivo-profissional rounded-lg mx-12">
+            <h2>
+              Objetivo Profissional
+            </h2>
+            <p className="text-left text-base break-normal">
+              Buscar uma oportunidade como desenvolvedor web,
+              onde eu possa empregar minhas habilidades em programação e contribuir
+              de forma criativa para encontrar soluções eficientes para projetos web.
+              Almejo me aprimorar com ajuda da equipe e evoluir minhas habilidades,
+              sempre buscando novas maneiras de contribuir com a equipe.
+            </p>
+          </div>
+        </div>
       </div>
       
       

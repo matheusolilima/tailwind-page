@@ -86,10 +86,11 @@ p {
 
 
 .cropped1 {
-  width: 40%; /* width of container */
-  /* height: 200px; /* height of container */ 
+  width: 20%; /* width of container */
+  height: 20%; /* height of container */ 
   object-fit: cover;
   /* border: 5px solid black; */
+  /*corte de imagem*/
 }
 .cropped2 {
     width: 200px; /* width of container */
