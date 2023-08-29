@@ -4,8 +4,27 @@ import Profile from "./Matheus-picture.jpeg"
 import EmailIcon from "../Cornmanthe3rd-Metronome-Communication-gmail.512.png"
 import GitIcon from "../Arturo-Wibawa-Akar-Github.512.png"
 import LinkedinIcon from "../Danleech-Simple-Linkedin.512.png"
+import InfoCard from '@/components/infoCard'
 
 export default function Home() {
+  //posso armazenar componente em variavel pra renderizar quando quero
+  const formacao = {
+    title: "Formação",
+    classes: "bg-green-600",
+    list:[
+      "Bacharel em Ciências da Computação – Universidade Federal de Jataí",
+      "Técnico em Informática - Instituto Federal de Goiás",
+      "Desenvolvimento Web Fullstack - Trybe"
+    ]
+  }
+
+  const habilidades = {
+    title: "Principais tecnologias e habilidades ",
+    classes: "bg-red-600",
+    list:["HTML","CSS","JavaScript","React","Python","SQL","POO","Scrum"]
+  }
+
+  const armazena = InfoCard({ title: "titulo teste", list:["A","B","C"]})
   return (
     <main className="flex min-h-screen flex-col">
       
@@ -41,7 +60,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-row">
-        <Image src={ Profile } alt="profile-picture" className="cropped1"/>
+        <Image src={ Profile } alt="profile-picture" className="cropped1 rounded-lg"/>
 
         <div className="flex flex-row rounded-lg bg-black ">
 
@@ -75,31 +94,29 @@ export default function Home() {
       
       <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-96 mx-12 space-x-10">
         
-        <div className="formacao rounded-lg">
-          <h2>
-            Formação
-          </h2>
-          <ul className="list-disc list-inside">
-            <li>Bacharel em Ciências da Computação – Universidade Federal de Jataí</li>
-            <li>Técnico em Informática - Instituto Federal de Goiás</li>
-            <li>Desenvolvimento Web Fullstack - Trybe</li>
-          </ul>
-        </div>
-        
+        {InfoCard(formacao)}
+        {InfoCard(habilidades)}
         <div className="tecnologias-habilidades rounded-lg">
           <h2>
             Principais tecnologias e habilidades 
           </h2>
-          <ul className="list-disc list-inside">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Python</li>
-              <li>SQL</li>
-              <li>POO</li>
-              <li>Scrum</li>
-            </ul>
+          <div className="flex flex-row">
+
+            <div className="p-6">
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>JavaScript</div>
+              <div>React</div>
+            </div>
+            <div className="p-6">
+              <div>Python</div>
+              <div>SQL</div>
+              <div>POO</div>
+              <div>SCRUM</div>
+            </div>
+          
+          </div>
+
         </div>
 
       
@@ -107,10 +124,8 @@ export default function Home() {
           <h2>
             Experiências
           </h2>
-          <ul className="list-disc list-inside">
-              <li>Professor de Programação</li>
-              <li>Assistente técnico em telecomunicações</li>
-            </ul>
+            <div>Professor de Programação</div>
+            <div>Assistente técnico em telecomunicações</div>
         </div>
       
       </div>
