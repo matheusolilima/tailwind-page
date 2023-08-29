@@ -7,7 +7,8 @@ import LinkedinIcon from "../Danleech-Simple-Linkedin.512.png"
 import InfoCard from '@/components/infoCard'
 
 export default function Home() {
-  //posso armazenar componente em variavel pra renderizar quando quero
+  // posso armazenar componente em variavel pra renderizar quando quero
+  // para adicionar cor especifica usa-se bg-[#50d71e]
   const formacao = {
     title: "Formação",
     classes: "bg-green-600",
@@ -24,7 +25,13 @@ export default function Home() {
     list:["HTML","CSS","JavaScript","React","Python","SQL","POO","Scrum"]
   }
 
-  const armazena = InfoCard({ title: "titulo teste", list:["A","B","C"]})
+  const experiencias = {
+    title: "Experiências ",
+    classes: "bg-blue-600",
+    list:["Professor de Programação","Assistente técnico em telecomunicações"]
+  }
+
+  // const armazena = InfoCard({ title: "titulo teste", list:["A","B","C"]})
   return (
     <main className="flex min-h-screen flex-col">
       
@@ -96,37 +103,7 @@ export default function Home() {
         
         {InfoCard(formacao)}
         {InfoCard(habilidades)}
-        <div className="tecnologias-habilidades rounded-lg">
-          <h2>
-            Principais tecnologias e habilidades 
-          </h2>
-          <div className="flex flex-row">
-
-            <div className="p-6">
-              <div>HTML</div>
-              <div>CSS</div>
-              <div>JavaScript</div>
-              <div>React</div>
-            </div>
-            <div className="p-6">
-              <div>Python</div>
-              <div>SQL</div>
-              <div>POO</div>
-              <div>SCRUM</div>
-            </div>
-          
-          </div>
-
-        </div>
-
-      
-        <div className="experiencias rounded-lg">
-          <h2>
-            Experiências
-          </h2>
-            <div>Professor de Programação</div>
-            <div>Assistente técnico em telecomunicações</div>
-        </div>
+        {InfoCard(experiencias)}
       
       </div>
     </main>
