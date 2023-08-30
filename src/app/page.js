@@ -57,11 +57,11 @@ export default function Home() {
       </div>
 
       <div className="flex flex-row">
-        <Image src={ Profile } alt="profile-picture" className="cropped1 rounded-lg"/>
         
-        <div className="flex flex-row rounded-lg bg-black ">
+        <Image src={ Profile } alt="profile-picture" className="cropped1 rounded-lg mx-12"/>
+        <div className="flex flex-row rounded-lg bg-black mx-12">
 
-          <div className="sobre rounded-lg mx-12">
+          <div className="sobre rounded-lg mx-6">
             <h2>Sobre</h2>
             <p className="text-left text-base break-normal">
               Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante
@@ -89,7 +89,7 @@ export default function Home() {
       
       
       
-      <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-96 mx-12 space-x-10">
+      <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-80 mx-12 space-x-10">
         
         {InfoCard(formacao)}
         {InfoCard(habilidades)}
