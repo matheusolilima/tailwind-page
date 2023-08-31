@@ -32,8 +32,6 @@ body {
     background-image: "../logo.png";
 }
 
-
-
 h2 {
   font-size: 30px;
 }
@@ -42,23 +40,10 @@ p {
   font-size: 14px;
 }
 
-
-
-
-
-.sobre {
-  /* width: 500px; */
+.sobre-objetivo {
+  width: 500px;
   /* height: 200px; */
   background: rgb(255, 5, 172);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.objetivo-profissional {
-  /* width: 500px; */
-  /* height: 200px; */
-  background: rgb(199, 17, 199);
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;

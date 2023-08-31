@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import Profile from "./Matheus-picture.jpeg"
@@ -11,6 +12,18 @@ import Logo from "../logo.png"
 export default function Home() {
   // posso armazenar componente em variavel pra renderizar quando quero
   // para adicionar cor especifica usa-se bg-[#50d71e]
+  const sobre = {
+    title: "Sobre",
+    visibility: "visible",
+    classes: "bg-blue-400",
+    list:["Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante como é possível usar essa ferramenta em tantos contextos diferentes para a resolução dos mais diversos problemas. Tenho focado no aprimoramento de minhas hard-skills com React, Redux, Hooks, Jest, Node.js, MySQL, arquitetura MSC e TypeScript, e nas soft-skills que tangem a comunicação e liderança. Vamos nos conectar e ficarei feliz com a oportunidade de por em prática aquilo que venho estudando."]
+  }
+  const objetivo = {
+    title: "Objetivo",
+    visibility: "visible",
+    classes: "bg-blue-400",
+    list:["Buscar uma oportunidade como desenvolvedor web, onde eu possa empregar minhas habilidades em programação e contribuir de forma criativa para encontrar soluções eficientes para projetos web. Almejo me aprimorar com ajuda da equipe e evoluir minhas habilidades, sempre buscando novas maneiras de contribuir com a equipe."]
+  }
   const formacao = {
     title: "Formação",
     classes: "bg-green-600",
@@ -37,7 +50,15 @@ export default function Home() {
     list:["Professor de Programação","Assistente técnico em telecomunicações"]
   }
 
- 
+  function visibilityHandler(element){
+    // const id = event.target.id
+    element.visibility == "visible"?
+      element.visibility = "invisible":
+      element.visibility = "visible"
+  }
+  function testAlert(){
+    alert("teste")
+  }
   return (
     <main className="flex min-h-screen flex-col">
       
@@ -59,37 +80,48 @@ export default function Home() {
       <div className="flex flex-row">
         
         <Image src={ Profile } alt="profile-picture" className="cropped1 rounded-lg mx-12"/>
-        <div className="flex flex-row rounded-lg bg-black mx-12">
-
-          <div className="sobre rounded-lg mx-6">
-            <h2>Sobre</h2>
-            <p className="text-left text-base break-normal">
-              Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante
-              como é possível usar essa ferramenta em tantos contextos diferentes para a resolução dos mais diversos problemas.
-              Tenho focado no aprimoramento de minhas hard-skills com React, Redux, Hooks, Jest, Node.js, MySQL, arquitetura MSC e TypeScript,
-              e nas soft-skills que tangem a comunicação e liderança.
-              Vamos nos conectar e ficarei feliz com a oportunidade de por em prática aquilo que venho estudando.  
-            </p>
+        
+          {/*InfoCard(sobre)*/}
+        <div
+          
+          className={`flex flex-row rounded-lg bg-black mx-12`}>
+          <div
+            id="sobre"
+            // onClick={visibilityHandler(sobre)}
+            className={`${sobre.visibility} sobre-objetivo rounded-lg mx-[10px]`}
+            >
+              <h2>Sobre</h2>
+              <p className="text-left text-base break-normal">
+                Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante
+                como é possível usar essa ferramenta em tantos contextos diferentes para a resolução dos mais diversos problemas.
+                Tenho focado no aprimoramento de minhas hard-skills com React, Redux, Hooks, Jest, Node.js, MySQL, arquitetura MSC e TypeScript,
+                e nas soft-skills que tangem a comunicação e liderança.
+                Vamos nos conectar e ficarei feliz com a oportunidade de por em prática aquilo que venho estudando.  
+              </p>
           </div>
 
-          <div className="objetivo-profissional rounded-lg mx-12">
-            <h2>
-              Objetivo Profissional
-            </h2>
-            <p className="text-left text-base break-normal">
-              Buscar uma oportunidade como desenvolvedor web,
-              onde eu possa empregar minhas habilidades em programação e contribuir
-              de forma criativa para encontrar soluções eficientes para projetos web.
-              Almejo me aprimorar com ajuda da equipe e evoluir minhas habilidades,
-              sempre buscando novas maneiras de contribuir com a equipe.
-            </p>
+          <div
+            id="objetivo"
+            //visibilityHandler(objetivo)}
+            className={`${sobre.visibility} sobre-objetivo rounded-lg mx-[10px]`}
+            >
+              <h2>
+                Objetivo Profissional
+              </h2>
+              <p className="text-left text-base break-normal">
+                Buscar uma oportunidade como desenvolvedor web,
+                onde eu possa empregar minhas habilidades em programação e contribuir
+                de forma criativa para encontrar soluções eficientes para projetos web.
+                Almejo me aprimorar com ajuda da equipe e evoluir minhas habilidades,
+                sempre buscando novas maneiras de contribuir com a equipe.
+              </p>
           </div>
         </div>
       </div>
       
       
       
-      <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-80 mx-12 space-x-10">
+      <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-[320px] mx-12 space-x-10">
         
         {InfoCard(formacao)}
         {InfoCard(habilidades)}
