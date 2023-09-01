@@ -7,10 +7,10 @@ import LinkedinIcon from "../Danleech-Simple-Linkedin.512.png"
 export default function ContatoCard() {
   
 
-  const usedClass="flex flex-col text-cyan-600 mr-6 bg-white rounded-lg"
+  const usedClass="flex flex-col text-cyan-600 mr-6 bg-white h-[80px] rounded-lg"
 
   return (
-    <div className="flex flex-col text-cyan-600 mr-6 bg-white h-[80px] rounded-lg">
+    <div className="flex flex-col text-cyan-600  bg-white h-[80px] rounded-lg">
       
 
       <div className="flex flex-row">
