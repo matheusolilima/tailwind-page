@@ -3,7 +3,7 @@ export default function MenuButtons(list) {
   const usedClass = "flex rounded-lg bg-cyan-700 h-[100px] w-auto justify-center items-center"
 
   return (
-    <div className="flex rounded-lg bg-cyan-700 h-[80px] w-2/3 justify-center items-center">
+    <div className="flex rounded-lg bg-cyan-800 h-[80px] w-2/3 justify-center items-center">
 
       {/* <button key={item.title} className={`h-[100px] w-[100px] bg-white mx-[10px]`}>{ item.title }</button> */}
     {list.map((item) => (
