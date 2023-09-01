@@ -4,15 +4,8 @@ import EmailIcon from "../Cornmanthe3rd-Metronome-Communication-gmail.512.png"
 import GitIcon from "../Arturo-Wibawa-Akar-Github.512.png"
 import LinkedinIcon from "../Danleech-Simple-Linkedin.512.png"
 
-export default function ContatoCard(infos = {
-    title: "",
-    classes: "",
-    list: []
-  }) {
+export default function ContatoCard() {
   
-    const localInfo = {
-    cols: ""
-  }
 
   const usedClass="flex flex-col text-cyan-600 mr-6 bg-white rounded-lg"
 
