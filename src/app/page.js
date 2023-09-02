@@ -15,18 +15,16 @@ import FrameCard from '@/components/frameCard'
 export default function Home() {
   // posso armazenar componente em variavel pra renderizar quando quero
   // para adicionar cor especifica usa-se bg-[#50d71e]
-  const [ sobreVisibility, setSobreVisibility] = React.useState("visible");
-  const [ objetivoVisibility, setObjetivoVisibility] = React.useState("invisible");
+  const [ isSobreVisible, setSobreVisible] = React.useState(true);
+  const [ isObjetivoVisible, setObjetivoVisible] = React.useState(false);
   
   const sobre = {
     title: "Sobre",
-    visibility: "visible",
     classes: "bg-blue-400",
     list:["Encontrei na programação uma forma de empregar meu raciocínio lógico, acho fascinante como é possível usar essa ferramenta em tantos contextos diferentes para a resolução dos mais diversos problemas. Tenho focado no aprimoramento de minhas hard-skills com React, Redux, Hooks, Jest, Node.js, MySQL, arquitetura MSC e TypeScript, e nas soft-skills que tangem a comunicação e liderança. Vamos nos conectar e ficarei feliz com a oportunidade de por em prática aquilo que venho estudando."]
   }
   const objetivo = {
     title: "Objetivo",
-    visibility: "visible",
     classes: "bg-blue-400",
     list:["Buscar uma oportunidade como desenvolvedor web, onde eu possa empregar minhas habilidades em programação e contribuir de forma criativa para encontrar soluções eficientes para projetos web. Almejo me aprimorar com ajuda da equipe e evoluir minhas habilidades, sempre buscando novas maneiras de contribuir com a equipe."]
   }
@@ -56,10 +54,10 @@ export default function Home() {
     list:["Professor de Programação","Assistente técnico em telecomunicações"]
   }
 
-  function visibilityHandler(){
+  function toggleSobreObjetivo(){
     // const id = event.target.id
-    setSobreVisibility("invisible")
-    setObjetivoVisibility("visible")
+    setSobreVisible(!isSobreVisible)
+    setObjetivoVisible(!isObjetivoVisible)
   }
 
   function testAlert(){
@@ -77,7 +75,7 @@ export default function Home() {
         <Image src={ Logo } alt="logo" className="flex h-[80px] w-[240px] rounded-lg"/>
         
         {/* ContatoCard() */}
-      {MenuButtons([formacao,habilidades,experiencias,sobre,objetivo])}  
+        {MenuButtons([formacao,habilidades,experiencias,sobre,objetivo])}  
       </div>
       {/* MenuButtons([formacao,habilidades,experiencias,sobre,objetivo]) */}
       
@@ -92,8 +90,8 @@ export default function Home() {
 
           <div
             id="sobre"
-            onClick={visibilityHandler}
-            className={`${sobreVisibility} sobre-objetivo rounded-lg mx-[10px]`}
+            onClick={toggleSobreObjetivo}
+            className={`${isSobreVisible? "": "hidden"} sobre-objetivo rounded-lg mx-[10px]`}
             >
               <h2>Sobre</h2>
               <p className="text-left text-base break-normal">
@@ -107,8 +105,8 @@ export default function Home() {
 
           <div
             id="objetivo"
-            onClick={visibilityHandler}
-            className={`${objetivoVisibility} sobre-objetivo rounded-lg mx-[10px]`}
+            onClick={toggleSobreObjetivo}
+            className={`${isObjetivoVisible? "": "hidden"} sobre-objetivo rounded-lg mx-[10px]`}
             >
               <h2>
                 Objetivo Profissional
@@ -121,6 +119,7 @@ export default function Home() {
                 sempre buscando novas maneiras de contribuir com a equipe.
               </p>
           </div>
+          {InfoCard(formacao)}
         </div>
       </div>
       <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-[320px] mx-12 space-x-10">
