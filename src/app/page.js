@@ -18,6 +18,30 @@ export default function Home() {
   const [ isSobreVisible, setSobreVisible] = React.useState(true);
   const [ isObjetivoVisible, setObjetivoVisible] = React.useState(false);
   
+  const [ isFormacaoVisible, setFormacaoVisible] = React.useState({
+    title: "Formação",
+    classes: "bg-green-600",
+    isVisible: true,
+    list:[
+      "Bacharel em Ciências da Computação – Universidade Federal de Jataí",
+      "Técnico em Informática - Instituto Federal de Goiás",
+      "Desenvolvimento Web Fullstack - Trybe"
+    ]
+  });
+  
+  const [ isHabilidadesVisible, setHabilidadesVisible] = React.useState({
+    title: "Tecnologias e habilidades ",
+    classes: "bg-red-600",
+    isVisible: false,
+    list:[
+      "HTML","CSS","JavaScript","React",
+      "Python","SQL","NoSQL","Node",
+      "Jest","GitHub","POO","Scrum"
+    ]
+  });
+
+  const [ isExperienciasVisible, setExperienciasVisible] = React.useState(false);
+
   const sobre = {
     title: "Sobre",
     classes: "bg-blue-400",
@@ -60,9 +84,12 @@ export default function Home() {
     setObjetivoVisible(!isObjetivoVisible)
   }
 
-  function testAlert(){
-    alert("teste")
+  function toggleForHabExp(){
+    setFormacaoVisible({ isVisible: !(isFormacaoVisible.isVisible) })
+    setHabilidadesVisible({ isVisible: !(isHabilidadesVisible.isVisible) })
+    setExperienciasVisible({ isVisible: !(isExperienciasVisible.isVisible) })
   }
+
   return (
     <main className="flex min-h-screen flex-col">
       
@@ -119,7 +146,9 @@ export default function Home() {
                 sempre buscando novas maneiras de contribuir com a equipe.
               </p>
           </div>
-          {InfoCard(formacao)}
+          
+          {InfoCard(isFormacaoVisible)}
+          {/* InfoCard(isHabilidadesVisible) */}
         </div>
       </div>
       <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-[320px] mx-12 space-x-10">
