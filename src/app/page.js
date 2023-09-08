@@ -63,6 +63,37 @@ export default function Home() {
     setObjetivo({ ...objetivo, isVisible: !objetivo.isVisible})
   }
 
+  function btnShowInfo(buttonName){
+    // é possivel usar funcoes dentro de uma lista:
+    // lista[0]()
+    if(buttonName == "Sobre"){
+      setSobre({ ...sobre, isVisible: true})
+      setObjetivo({ ...objetivo, isVisible: false})
+    }
+    if(buttonName == "Objetivo"){
+      setObjetivo({ ...objetivo, isVisible: true})
+      setSobre({ ...sobre, isVisible: false})
+    }
+    //manter separado por blocos para organizar
+    if(buttonName == "Formação"){
+      setFormacao({ ...formacao, isVisible: true })
+      setHabilidades({ ...habilidades, isVisible: false })
+      setExperiencias({ ...experiencias, isVisible: false})
+    }
+    if(buttonName == "Tecnologias e habilidades"){
+      setFormacao({ ...formacao, isVisible: false })
+      setHabilidades({ ...habilidades, isVisible: true })
+      setExperiencias({ ...experiencias, isVisible: false })
+    }
+    if(buttonName == "Experiências"){
+      setFormacao({ ...formacao, isVisible: false})
+      setHabilidades({ ...habilidades, isVisible: false})
+      setExperiencias({ ...experiencias, isVisible: true})
+    }
+
+
+  }
+  
   function toggleForHabExp(){
     const displaying = [
       formacao.isVisible,
@@ -77,6 +108,11 @@ export default function Home() {
 
   }
 
+  const bloco1States=[{...sobre}, {...objetivo}]
+  const bloco2States=[{...formacao}, {...habilidades}, {...experiencias}]
+  
+  const bloco1Setters=[setSobre,setObjetivo]
+
   return (
     <main className="flex min-h-screen flex-col">
       
@@ -88,9 +124,29 @@ export default function Home() {
         
         <Image src={ Logo } alt="logo" className="flex h-[80px] w-[240px] rounded-lg"/>
         
-        {MenuButtons([formacao,habilidades,experiencias,sobre,objetivo])}
-        {/* <MenuButtons />
-        <MenuButtons /> */}
+        {/* {MenuButtons([formacao,habilidades,experiencias,sobre,objetivo])} */}
+        {/* <MenuButtons stateList={[{...sobre},{...objetivo}]} /> */}
+        
+        <div className={`flex rounded-lg bg-cyan-800 h-[80px] w-auto justify-center items-center`}>
+
+          {bloco1States.map((item) => (
+        
+            <button onClick={() => btnShowInfo(item.title)} key={item.title} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-[5px]">
+              {item.title}
+            </button>
+      
+          ))}
+        
+          {bloco2States.map((item) => (
+        
+            <button onClick={() => btnShowInfo(item.title)} key={item.title} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-[5px]">
+              {item.title}
+            </button>
+      
+          ))}
+        
+        </div>
+      
       </div>
 
       <div className="flex flex-row">
@@ -99,7 +155,10 @@ export default function Home() {
         
 
         <div className={`flex flex-row rounded-lg bg-black mx-12 w-2/3`}>
-
+          
+          {/* <InfoCard infos={sobre} toggler={toggleSobreObjetivo}/>
+          <InfoCard infos={objetivo} toggler={toggleSobreObjetivo}/> */}
+          
           <div
             id="sobre"
             onClick={toggleSobreObjetivo}
@@ -131,10 +190,6 @@ export default function Home() {
                 sempre buscando novas maneiras de contribuir com a equipe.
               </p>
           </div>
-          
-          {/* <InfoCard infos={sobre} toggler={toggleSobreObjetivo}/> */}
-          {/* <InfoCard infos={objetivo} toggler={toggleSobreObjetivo}/> */}
-          {/* funciona mas o tamanho fica ruim*/}
 
           <InfoCard infos={formacao} toggler={toggleForHabExp}/>
           <InfoCard infos={habilidades} toggler={toggleForHabExp}/>
@@ -142,13 +197,6 @@ export default function Home() {
           
         </div>
       </div>
-      {/* <div className="flex flex-row rounded-lg bg-amber-300 justify-center items-center h-[320px] mx-12 space-x-10">
-        
-        {InfoCard(formacao)}
-        {InfoCard(habilidades)}
-        {InfoCard(experiencias)}
-      
-      </div> */}
 
     </main>
   )
