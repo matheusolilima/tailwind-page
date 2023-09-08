@@ -1,13 +1,7 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import Profile from "./Matheus-picture.jpeg"
-import EmailIcon from "../Cornmanthe3rd-Metronome-Communication-gmail.512.png"
-import GitIcon from "../Arturo-Wibawa-Akar-Github.512.png"
-import LinkedinIcon from "../Danleech-Simple-Linkedin.512.png"
 import InfoCard from '@/components/infoCard'
-import ContatoCard from '@/components/contatoCard'
 import Logo from "../logo.png"
 import MenuButtons from '@/components/menuButtons'
 import FrameCard from '@/components/frameCard'
@@ -15,6 +9,9 @@ import FrameCard from '@/components/frameCard'
 export default function Home() {
   // posso armazenar componente em variavel pra renderizar quando quero
   // para adicionar cor especifica usa-se bg-[#50d71e]
+  const bluePallete = ["blue-400","blue-600","blue-800"]
+  const greenPallete = ["green-400","green-600","green-800"]
+
   const [ sobre, setSobre] = React.useState({
     title: "Sobre",
     cor: "bg-blue-400",
@@ -110,13 +107,12 @@ export default function Home() {
 
   const bloco1States=[{...sobre}, {...objetivo}]
   const bloco2States=[{...formacao}, {...habilidades}, {...experiencias}]
-  
-  const bloco1Setters=[setSobre,setObjetivo]
+
 
   return (
     <main className="flex min-h-screen flex-col">
       
-      <div className="flex bg-cyan-700 h-[80px] items-center justify-between mb-6 ">
+      <div className={`flex bg-${ bluePallete[2] } h-[80px] items-center justify-between mb-6`} >
 
         {/* <h1  className="text-7xl font-sans text-cyan-50">
           Matheus Oliveira Lima
@@ -127,7 +123,7 @@ export default function Home() {
         {/* {MenuButtons([formacao,habilidades,experiencias,sobre,objetivo])} */}
         {/* <MenuButtons stateList={[{...sobre},{...objetivo}]} /> */}
         
-        <div className={`flex rounded-lg bg-cyan-800 h-[80px] w-auto justify-center items-center`}>
+        <div className={`flex rounded-lg bg-${ bluePallete[2] } h-[80px] w-auto justify-center items-center`}>
 
           {bloco1States.map((item) => (
         
@@ -151,10 +147,10 @@ export default function Home() {
 
       <div className="flex flex-row">
         
-        <FrameCard />
+        <FrameCard pallete={ bluePallete } />
         
 
-        <div className={`flex flex-row rounded-lg bg-black mx-12 w-2/3`}>
+        <div className={`flex flex-row rounded-lg ${bluePallete[1]} mx-12 w-2/3`}>
           
           {/* <InfoCard infos={sobre} toggler={toggleSobreObjetivo}/>
           <InfoCard infos={objetivo} toggler={toggleSobreObjetivo}/> */}
