@@ -10,7 +10,7 @@ export default function Home() {
   // posso armazenar componente em variavel pra renderizar quando quero
   // para adicionar cor especifica usa-se bg-[#50d71e]
   const bluePallete = ["blue-400","blue-600","blue-800"]
-  const greenPallete = ["green-400","green-600","green-800"]
+
 
   const [ sobre, setSobre] = React.useState({
     title: "Sobre",
@@ -28,7 +28,7 @@ export default function Home() {
   
   const [ formacao, setFormacao] = React.useState({
     title: "Formação",
-    cor: "bg-green-600",
+    cor: "bg-blue-600",
     isVisible: true,
     list:[
       "Bacharel em Ciências da Computação – Universidade Federal de Jataí",
@@ -39,7 +39,7 @@ export default function Home() {
   
   const [ habilidades, setHabilidades] = React.useState({
     title: "Tecnologias e habilidades",
-    cor: "bg-red-600",
+    cor: "bg-blue-600",
     isVisible: false,
     list:[
       "HTML","CSS","JavaScript","React",
@@ -112,18 +112,17 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       
-      <div className={`flex bg-${ bluePallete[2] } h-[80px] items-center justify-between mb-6`} >
+      <div className={`flex bg-[#1e40af] h-[80px] items-center justify-between mb-6`} >
 
         {/* <h1  className="text-7xl font-sans text-cyan-50">
           Matheus Oliveira Lima
         </h1> */}
-        
+
         <Image src={ Logo } alt="logo" className="flex h-[80px] w-[240px] rounded-lg"/>
         
-        {/* {MenuButtons([formacao,habilidades,experiencias,sobre,objetivo])} */}
         {/* <MenuButtons stateList={[{...sobre},{...objetivo}]} /> */}
         
-        <div className={`flex rounded-lg bg-${ bluePallete[2] } h-[80px] w-auto justify-center items-center`}>
+        <div className={`flex rounded-lg bg-[#1e40af] h-[80px] w-auto justify-center items-center`}>
 
           {bloco1States.map((item) => (
         
@@ -150,7 +149,7 @@ export default function Home() {
         <FrameCard pallete={ bluePallete } />
         
 
-        <div className={`flex flex-row rounded-lg ${bluePallete[1]} mx-12 w-2/3`}>
+        <div className={`flex flex-row rounded-lg bg-[#1e40af] mx-12 w-2/3`}>
           
           {/* <InfoCard infos={sobre} toggler={toggleSobreObjetivo}/>
           <InfoCard infos={objetivo} toggler={toggleSobreObjetivo}/> */}
@@ -158,7 +157,7 @@ export default function Home() {
           <div
             id="sobre"
             onClick={toggleSobreObjetivo}
-            className={`${sobre.isVisible? "": "hidden"} sobre-objetivo rounded-lg mx-[10px]`}
+            className={`${sobre.isVisible? "": "hidden"} sobre-objetivo rounded-lg mx-[10px] text-white`}
             >
               <h2>Sobre</h2>
               <p className="text-left text-base break-normal">
@@ -173,7 +172,7 @@ export default function Home() {
           <div
             id="objetivo"
             onClick={toggleSobreObjetivo}
-            className={`${objetivo.isVisible? "": "hidden"} sobre-objetivo rounded-lg mx-[10px]`}
+            className={`${objetivo.isVisible? "": "hidden"} sobre-objetivo rounded-lg mx-[10px] text-white`}
             >
               <h2>
                 Objetivo Profissional
